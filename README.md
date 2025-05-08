@@ -13,5 +13,5 @@ Streamlit app that uses LangChain, LangGraph, and Mistral to research companies 
 
 ## Run
 
-2. Run the Application using `streamlit run stream` in the terminal.
+1. Run the Application using `streamlit run stream` in the terminal.
 
