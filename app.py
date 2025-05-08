@@ -4,12 +4,6 @@ from langgraph.prebuilt import create_react_agent
 from dotenv import load_dotenv
 import os
 
-llm = ChatMistralAI(
-    model="mistral-large-latest",
-    temperature=0,
-    max_retries=2,
-)
-
 # Load environment variables from .env file
 load_dotenv()
 
