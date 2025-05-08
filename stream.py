@@ -6,6 +6,7 @@ from langchain_community.tools.tavily_search import TavilySearchResults
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import SystemMessage, HumanMessage
 from dotenv import load_dotenv
+import os
 
 # Load environment variables
 load_dotenv()
@@ -15,9 +16,10 @@ llm = ChatMistralAI(
     model="mistral-large-latest",
     temperature=0,
     max_retries=2,
+    api_key=os.getenv("MISTRAL_API_KEY")
 )
 
-search = TavilySearchResults(max_results=2)
+search = TavilySearchResults(max_results=2, api_key=os.getenv("TAVILY_API_KEY"))
 tools = [search]
 agent_executor = create_react_agent(llm, tools)
 
