@@ -19,6 +19,9 @@ llm = ChatMistralAI(
     api_key=os.getenv("MISTRAL_API_KEY")
 )
 
+
+
+
 search = TavilySearchResults(max_results=2, tavily_api_key=os.getenv("TAVILY_API_KEY"))
 tools = [search]
 agent_executor = create_react_agent(llm, tools)
